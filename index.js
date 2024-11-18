@@ -29,10 +29,13 @@ function getRandomCard () {
 }
 
 function startGame() {
+
+    isAlive = true
+    hasBlackJack = false
     let firstCard = getRandomCard ()
     let secondCard = getRandomCard ()
     cards= [firstCard, secondCard]
-    sum = firstCrad + secondCard
+    sum = firstCard + secondCard
 
     renderGame()
 }
@@ -62,16 +65,14 @@ function renderGame() {
 }
 
 function newCard() {
-console.log("Drawing a new card from the deck!")
 
-let cardDrawn= getRandomCard ()
+    if (isAlive === true && hasBlackJack === false) {
+        let cardDrawn= getRandomCard()
+        sum += cardDrawn
+        cards.push(cardDrawn)
+        renderGame()
 
-sum += cardDrawn
-
-cards.push(cardDrawn)
-console.log(cards)
-
-renderGame ()
+ }
 
 }
 
