@@ -4,13 +4,16 @@
 // 2. Create a variable, sum, and set it to the sum of the two cards
 
 let firstCard = 10
-let secondCard = 12
+let secondCard = 11
 
 let sum = firstCard + secondCard
 
 let hasBlackJack = false
 let isAlive= true
 let message= ""
+
+let messageEl = document.getElementById("message-el")
+let sumEl= document.getElementById("sum-el")
 
 function startGame() {
     if (sum <= 20) {
@@ -25,14 +28,8 @@ function startGame() {
         message= "You're out of the game!" 
         isAlive=false
     }
-    
-    console.log(message)
-    console.log(hasBlackJack)
-    console.log(isAlive)
 
+ messageEl.textContent = message
 }
 
-console.log(message)
-console.log(hasBlackJack)
-console.log(isAlive)
 
